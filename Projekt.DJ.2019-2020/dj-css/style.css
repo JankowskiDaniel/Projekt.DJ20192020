@@ -292,3 +292,15 @@ form > strong {
   border-radius: 10px;
   border-color: orange;
 }
+
+.admin_table_tr{
+  border: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: orange;
+  padding: 10px;
+  margin: 10px;
+}
+.admin_table_td{
+  padding: 10px;
+}

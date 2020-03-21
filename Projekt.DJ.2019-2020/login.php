@@ -29,6 +29,7 @@ mysqli_set_charset($connection, "utf8");
             $_SESSION['user'] = $row['login'];
             $_SESSION['id_user'] = $row['Id_użytkownika'];
             $_SESSION['date'] = $row['data_utworzenia'];
+            $_SESSION['user_type'] = $row['Typ'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['password'] = $row['hasło']; //pobiera zahashowane haslo
             header('Location: panel_usera/index_user.php');

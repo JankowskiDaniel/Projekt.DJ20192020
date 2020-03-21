@@ -28,6 +28,14 @@ session_start();
              <p class="text-center"><strong>Login: </strong><?php echo $_SESSION['user'] ?></p>
              <p class="text-center"><strong>Data utworzenia konta: </strong><?php echo $_SESSION['date'] ?></p>
              <p class="text-center"><strong>E-mail: </strong><?php echo $_SESSION['email'] ?></p>
+             <?php
+             if($_SESSION['user_type']==1)
+             {
+               echo <<< BUTTON
+               <p class="text-center"><button><a href="../panel_admina/panel_admina.php">Panel administratora</a></button></p>
+               BUTTON;
+             }
+              ?>
              <p class="text-center"><button><a href="change_password.php">Zmiana hasła</a></button></p>
            </div>
            </div>
