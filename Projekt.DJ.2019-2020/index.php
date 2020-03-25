@@ -7,7 +7,7 @@ if(isset($_SESSION['iflogin']) && $_SESSION['iflogin']==true)
 }
  ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pl" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="description"content="Free English Learning">
@@ -47,24 +47,32 @@ if(isset($_SESSION['iflogin']) && $_SESSION['iflogin']==true)
   </a>
 </div>
 <div class="lead">
-<button type="button" class="btn btn-outline-danger"><a href="rejestracja.php" id="registered">Zarejestruj się</a></button>
-<button type="button" class="btn btn-outline-info"><a href="logowanie.php" id="logined">Zaloguj się</a></button>
+<button type="button" class="btn btn-outline-danger button-size"><a href="rejestracja.php" id="registered">Zarejestruj się</a></button>
+<button type="button" class="btn btn-outline-info button-size"><a href="logowanie.php" id="logined">Zaloguj się</a></button>
 </div>
 <div class="lead pictures-describe">
   <div class="row">
   <div class="col-md-4"><img src="./images/describe.png" alt="picture1" id="describe"></div>
-  <div class="col-md-8 l">
+  <div class="col-md-8">
   <p>Zapomnij o nieefektywnym uczeniu się słówek! Odkrywaj nowe metody nauczania i wybierz swój indywidualny styl najlepszy dla ciebie!</p>
 
   </div>
+  <hr width="75%">
 </div>
-<!--w tym miejscu robic dalej describy --> 
+<!--w tym miejscu robic dalej describy -->
 <div class="row">
   <div class="col-md-4"><img src="./images/describe1.png" alt="picture1" id="describe"></div>
-  <div class="col-md-8 l">
-  <p></p>
-
+  <div class="col-md-8">
+  <p>Zapisuj swój progres nauki i powracaj do słówek, kiedy tylko chcesz! To takie proste!</p>
   </div>
+  <hr width="75%">
+</div>
+<div class="row">
+<div class="col-md-4"><img src="./images/describe2.png" alt="picture1" id="describe"></div>
+<div class="col-md-8">
+<p>Ucz się w dowolnym momencie z dowolnego miejsca na świecie! Wystarczy tylko dostęp do internetu!</p>
+
+</div>
 
 </div>
 

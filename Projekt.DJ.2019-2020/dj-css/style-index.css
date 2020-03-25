@@ -340,8 +340,10 @@ form > strong {
 .lead{
   margin-top: 5%;
 }
-.btn {
+.button-size{
   margin: 0 auto;
+  width: 270px;
+  height: 100px;
 }
 #registered, #logined {
   text-decoration: none;
@@ -364,6 +366,4 @@ form > strong {
 .pictures-describe{
   background-color: #eaedf1;
   padding: 10px;
-}
-.l{
 }
