@@ -28,13 +28,13 @@ if(isset($_SESSION['iflogin']) && $_SESSION['iflogin']==true)
              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="./images/tlumacz1.jpg" alt="First slide">
+      <img class="d-block w-100 index-main" src="./images/tlumacz1.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="./images/tlumacz.jpg" alt="Second slide">
+      <img class="d-block w-100 index-main" src="./images/tlumacz.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="./images/tlumacz3.jpg" alt="Third slide">
+      <img class="d-block w-100 index-main" src="./images/tlumacz3.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -49,6 +49,25 @@ if(isset($_SESSION['iflogin']) && $_SESSION['iflogin']==true)
 <div class="lead">
 <button type="button" class="btn btn-outline-danger"><a href="rejestracja.php" id="registered">Zarejestruj się</a></button>
 <button type="button" class="btn btn-outline-info"><a href="logowanie.php" id="logined">Zaloguj się</a></button>
+</div>
+<div class="lead pictures-describe">
+  <div class="row">
+  <div class="col-md-4"><img src="./images/describe.png" alt="picture1" id="describe"></div>
+  <div class="col-md-8 l">
+  <p>Zapomnij o nieefektywnym uczeniu się słówek! Odkrywaj nowe metody nauczania i wybierz swój indywidualny styl najlepszy dla ciebie!</p>
+
+  </div>
+</div>
+<!--w tym miejscu robic dalej describy --> 
+<div class="row">
+  <div class="col-md-4"><img src="./images/describe1.png" alt="picture1" id="describe"></div>
+  <div class="col-md-8 l">
+  <p></p>
+
+  </div>
+
+</div>
+
 </div>
              <?php
              include_once("footer.php"); //odwolanie do naglowka

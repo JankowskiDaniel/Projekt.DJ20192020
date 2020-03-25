@@ -334,7 +334,7 @@ form > strong {
   width: 50%;
 
 }
-img {
+.index-main{
   height: 400px;
 }
 .lead{
@@ -356,4 +356,14 @@ img {
 }
 #logined{
   color: #4FA7FF;
+}
+#describe{
+  width: 100px;
+  height: 100px;
+}
+.pictures-describe{
+  background-color: #eaedf1;
+  padding: 10px;
+}
+.l{
 }
