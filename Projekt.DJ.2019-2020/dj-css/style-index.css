@@ -4,7 +4,16 @@ html, body, .container-fluid{
 .container-fluid{
   padding: 0;
   background-color: #eaedf1;
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_960_720.jpg");
 
+}
+/* Set a background image by replacing the URL below */
+body {
+  background: url('http://localhost/Projekt.DJ20192020/Projekt.DJ.2019-2020/images/background-image.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 .first_row {
   background-color: #4FA7FF;
@@ -315,4 +324,36 @@ form > strong {
 .admin_table{
   margin: 0 auto;
 
+}
+.test {
+  background-image: url("http://localhost/Projekt.DJ20192020/Projekt.DJ.2019-2020/tlumacz.jpg");
+  height: 100px;
+}
+
+.container{
+  width: 50%;
+
+}
+img {
+  height: 400px;
+}
+.lead{
+  margin-top: 5%;
+}
+.btn {
+  margin: 0 auto;
+}
+#registered, #logined {
+  text-decoration: none;
+
+}
+#registered:hover, #logined:hover {
+  text-decoration: none;
+  color: white;
+}
+#registered{
+  color: red;
+}
+#logined{
+  color: #4FA7FF;
 }
