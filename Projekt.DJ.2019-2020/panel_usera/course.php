@@ -3,7 +3,12 @@ session_start();
 if(!isset($_SESSION['iflogin'])){
   header('Location: .\index.php');
   exit();
+  }
+if(!isset($_GET['id'])){
+  header('Location: index_user.php');
+  exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -26,7 +31,7 @@ if(!isset($_SESSION['iflogin'])){
     <div class="row no-gutters second_row">
       <div class="col-lg-4 col-md-4 col-sm-6">
 <!-- drugie menu -->
-<div class="box usermenu">
+<!--<div class="box usermenu">
 <div class="headmenu1 toogle-menu">
 <h2 class="content_header">UŻYTKOWNIK</h2>
 </div>
@@ -46,6 +51,10 @@ if(!isset($_SESSION['iflogin'])){
 </div>
 <!-- menu kategorii -->
 <?php // IDEA: DRUGIE MENU ?>
+<?php
+$course = $_GET['id'];
+
+ ?>
 <div class="box usermenu">
 <div class="headmenu toogle-menu">
 <h2 class="content_header">KATEGORIE</h2>
@@ -64,17 +73,43 @@ if(!isset($_SESSION['iflogin'])){
   </ul>
 </nav>
 </div>
+<?php
+  $topic = "";
+  if($course=='1'){
+    $topic = 'e12';
+  }
+  if($course=='2'){
+    $topic = 'e13';
+  }
+  if($course=='3'){
+    $topic = 'e14';
+  }
 
+ ?>
 
       </div>
       <div class="col-lg-8 col-md-8 col-sm-6">
         <div class="box usercontent">
           <div class="headcontent toogle-menu">
-          <h2 class="content_header">NAZWA KATEGORII</h2>
+          <h2 class="content_header"><?php echo $topic ?></h2>
         </div>
         <div class="matter">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div class="alert alert-warning" role="alert">
+            Wybrałeś kurs <?php echo $topic;
+            if($topic=='e12'){
+              echo ". Podczas kursu zapoznasz się z pojęcia dotyczącymi sprzętu komputerowego. Jeśli chcesz, <a href=\"app.php?id=1\" class=\"alert-link\">Rozpocznij kurs";
+            }
+            if( $topic=='e13'){
+              echo ". Podczas kursu zapoznasz się z pojęciami dotyczącymi sieci komuterowych. Jeśli chcesz, <a href=\"app.php?id=2\" class=\"alert-link\">Rozpocznij kurs";
+            }
+            if($topic=='e14'){
+              echo ". Podczas kursu zapoznasz się z pojęciami dotyczącymi programowania aplikacji i stron internetowych.   Jeśli chcesz, <a href=\"app.php?id=3\" class=\"alert-link\">Rozpocznij kurs";
+            }
+
+
+
+             ?> </a>.
+          </div>
       </div>
 
     </div>
