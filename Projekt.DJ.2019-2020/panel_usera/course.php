@@ -30,26 +30,7 @@ if(!isset($_GET['id'])){
 
     <div class="row no-gutters second_row">
       <div class="col-lg-4 col-md-4 col-sm-6">
-<!-- drugie menu -->
-<!--<div class="box usermenu">
-<div class="headmenu1 toogle-menu">
-<h2 class="content_header">UŻYTKOWNIK</h2>
-</div>
- <nav class="navbar navbar-static-top menu1">
-  <ul class="navbar-nav mainmenu">
-    <li class="nav-item">
-      <a class="nav-link user_menu" href="profile_user.php">Profil</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link user_menu" href="#">Nauczone słówka</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link user_menu" href="#">Ukończone kursy</a>
-    </li>
-  </ul>
-</nav>
-</div>
-<!-- menu kategorii -->
+
 <?php // IDEA: DRUGIE MENU ?>
 <?php
 $course = $_GET['id'];
@@ -62,13 +43,13 @@ $course = $_GET['id'];
  <nav class="navbar navbar-static-top menu">
   <ul class="navbar-nav mainmenu">
     <li class="nav-item">
-      <a class="nav-link" href="course.php?id=1">Klasyfikacja E-12</a>
+      <a class="nav-link" href="course.php?id=1">Kwalifikacja E-12</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="course.php?id=2">Klasyfikacja E-13</a>
+      <a class="nav-link" href="course.php?id=2">Kwalifikacja E-13</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="course.php?id=3">Klasyfikacja E-14</a>
+      <a class="nav-link" href="course.php?id=3">Kwalifikacja E-14</a>
     </li>
   </ul>
 </nav>

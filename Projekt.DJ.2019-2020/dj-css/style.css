@@ -319,3 +319,24 @@ form > strong {
 .api{
   margin: 0 auto;
 }
+
+
+
+#translate-word{
+  margin-top: 50px;
+  height: 40px;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  box-shadow: none;
+  color: #111;
+}
+#word.display-4 {
+  width: 100%;
+  text-align: center;
+}
+#chuj{
+  margin-top: 50px;
+}

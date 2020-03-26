@@ -18,7 +18,7 @@ if(!isset($_GET['id'])){
     <meta name="author" content="Daniel Jankowski">
     <meta name="keywords" content="english,polish,IT,learn,words">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../dj-css/style.css">
     <title>MyIt</title>
@@ -66,20 +66,106 @@ $words = "SELECT `polskie_tlum`,`angielskie_tlum` FROM `słowa` WHERE `Id_dzialu
 $result_words = mysqli_query($connection, $words);
 $words_array = array();
 
-while($row_words =  mysqli_fetch_array($result_words)){
+while($row_words =  mysqli_fetch_assoc($result_words)){
   array_push($words_array, $row_words);
 }
-print_r($words_array);
+
 
 //PRZEKAZYWANIE TABLICE WORDS_ARRAY NA FRONTA
 
 
 
            ?>
+           <script type="text/javascript">
+           var words = <?php echo json_encode($words_array)?>;
+           var words_length = <?php echo mysqli_num_rows($result_words)?>;
+           console.log(words[0].polskie_tlum);
+           console.log(words_length);
+           </script>
+           <div class="row">
+             <h2 class="display-4" id="word"></h2>
+           </div>
+           <div class="row">
+             <div class="col-md-2">
+               <p class="text-center" id="chuj">Nauczone słówka:</p>
+             </div>
+             <div class="col-md-10">
 
+               <div id="translate-box">
+
+               <input type="text" name="translate" value="" id="translate-word" placeholder="Odpowiedź:" autocomplete="off" required>
+               <script>
+                document.getElementById('word').innerHTML=words[0].polskie_tlum;
+                document.getElementById('chuj').innerHTML="Nauczone słówka: "+"0/"+words_length;
+               </script>
+             </div>
+             <button type="button" class="btn btn-outline-primary" id="previous">Previous</button>
+             <button type="button" class="btn btn-outline-primary" id="next">Next</button>
+             <button type="button" class="btn btn-outline-primary" id="check">Check</button>
+               <script type="text/javascript">
+               var i=0;
+               var good_words =0;
+               function test() {
+                 if(i>=words_length){
+                   i=words_length-1;
+                   document.getElementById('word').innerHTML=words[i].polskie_tlum;
+                   document.getElementById('translate-word').value="";
+                 } else {
+                 i++;
+                 document.getElementById('word').innerHTML=words[i].polskie_tlum;
+                 document.getElementById('translate-word').value="";
+               }
+               };
+               function test1() {
+                 if(i<0){
+                   i=0;
+                   document.getElementById('word').innerHTML=words[i].polskie_tlum;
+                   document.getElementById('translate-word').value="";
+                 } else {
+                 i--;
+                 document.getElementById('word').innerHTML=words[i].polskie_tlum;
+                 document.getElementById('translate-word').value="";
+               }
+               };
+               $("#next").click(function(){
+                 test();
+               });
+               $("#previous").click(function(){
+                 test1();
+               })
+               ////////////////////////////////////////////////////////////
+               function test3(){
+                var wordin = document.getElementById('translate-word').value;
+                if(wordin == words[i].angielskie_tlum){
+                  alert("Bardzo dobrze!");
+                  good_words++;
+                  if(good_words>=words_length){
+                    good_words=words_length;
+                  }
+                  document.getElementById('chuj').innerHTML="Nauczone słówka: "+good_words+"/"+words_length;
+                } else {
+                  alert("Źle");
+                  good_words--;
+                  if(good_words<0){
+                    good_words=0;
+                  }
+                  document.getElementById('chuj').innerHTML="Nauczone słówka: "+good_words+"/"+words_length;
+                }
+               }
+               $("#check").click(function(){
+                 test3();
+               })
+               </script>
+
+
+
+
+
+             </div>
+           </div>
           </div>
-      </div>
 
+      </div>
     </div>
   </div>
   <div class="web_clear">

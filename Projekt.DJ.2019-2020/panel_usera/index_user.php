@@ -53,13 +53,13 @@ if(!isset($_SESSION['iflogin'])){
  <nav class="navbar navbar-static-top menu">
   <ul class="navbar-nav mainmenu">
     <li class="nav-item">
-      <a class="nav-link" href="course.php?id=1">Klasyfikacja E-12</a>
+      <a class="nav-link" href="course.php?id=1">Kwalifikacja E-12</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="course.php?id=2">Klasyfikacja E-13</a>
+      <a class="nav-link" href="course.php?id=2">Kwalifikacja E-13</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="course.php?id=3">Klasyfikacja E-14</a>
+      <a class="nav-link" href="course.php?id=3">Kwalifikacja E-14</a>
     </li>
   </ul>
 </nav>
