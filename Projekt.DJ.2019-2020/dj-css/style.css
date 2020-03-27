@@ -335,8 +335,20 @@ form > strong {
 }
 #word.display-4 {
   width: 100%;
+  margin: 0 auto;
   text-align: center;
 }
-#chuj{
+#learned-paragraph{
   margin-top: 50px;
+}
+#buttons-api {
+  margin-top: 30px;
+}
+#next {
+  float: right;
+}
+#word-answer{
+  margin-top: 50px;
+  height: 40px;
+  width: 100%;
 }
