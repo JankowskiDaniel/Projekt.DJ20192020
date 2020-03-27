@@ -319,24 +319,30 @@ form > strong {
 .api{
   margin: 0 auto;
 }
-
-
+.matter{
+  height: 500px;
+}
+.api-shake{
+  height: 100px;
+}
 
 #translate-word{
   margin-top: 50px;
   height: 40px;
   width: 100%;
   border: 0;
-  outline: 0;
   padding: 0.5rem 0;
   border-bottom: 2px solid #d3d3d3;
-  box-shadow: none;
-  color: #111;
+  outline: none;
+}
+#translate-word:focus{
+  outline: none;
 }
 #word.display-4 {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+
 }
 #learned-paragraph{
   margin-top: 50px;
@@ -351,4 +357,7 @@ form > strong {
   margin-top: 50px;
   height: 40px;
   width: 100%;
+}
+#word-span{
+  position: relative;
 }

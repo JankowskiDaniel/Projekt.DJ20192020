@@ -1,9 +1,4 @@
-<script type="text/javascript">
-function logout(){
-  alert("Nastąpiło wylogowanie z serwisu.");
-}
-</script>
-          <div class="row no-gutters first_row">
+  <div class="row no-gutters first_row">
             <div class="header_clear">
             </div>
           <div class="col-lg-8 col-md-10 col-sm-2 my-auto">

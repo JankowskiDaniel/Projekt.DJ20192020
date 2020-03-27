@@ -18,8 +18,9 @@ if(!isset($_GET['id'])){
     <meta name="author" content="Daniel Jankowski">
     <meta name="keywords" content="english,polish,IT,learn,words">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../dj-css/style.css">
     <title>MyIt</title>
@@ -78,71 +79,89 @@ while($row_words =  mysqli_fetch_assoc($result_words)){
 
            ?>
 
-           <div class="row">
+           <div class="row api-shake">
              <h2 class="display-4" id="word"><span id="word-span"></span></h2>
            </div>
            <div class="row">
-             <div class="col-md-2">
-               <p class="text-center" id="learned-paragraph">Nauczone słówka:</p>
-             </div>
-             <div class="col-md-10">
-
+             <div class="col-md-12">
                <div class="col-md-12" id="translate-box">
-                <span id="word-answer"></span>
                <input type="text" name="translate" value="" id="translate-word" placeholder="Odpowiedź:" autocomplete="off" required>
-
              </div>
-
-
              <div class="col-md-12" id="buttons-api">
              <button type="button" class="btn btn-outline-primary" id="previous">Previous</button>
              <button type="button" class="btn btn-outline-primary" id="check">Check</button>
              <button type="button" class="btn btn-outline-primary" id="wrong-word">Nie wiesz?</button>
-
              <button type="button" class="btn btn-outline-primary" id="next">Next</button>
-
            </div>
+         </div>
+       </div>
+     <div class="row">
+       
+
+     </div>
 
                <script type="text/javascript">
                $(document).ready(function(){
                var words = <?php echo json_encode($words_array)?>;
                var words_length = <?php echo mysqli_num_rows($result_words)?>;
                document.getElementById('word-span').innerHTML=words[0].polskie_tlum;
-               document.getElementById('learned-paragraph').innerHTML="Nauczone słówka: "+"0/"+words_length;
+               //document.getElementById('learned-paragraph').innerHTML="Nauczone słówka: "+"0/"+words_length;
                $("#wrong-word").hide();
                $("#translate-word").show();
                var i=0;
                var good_words =0;
+               console.log(i);
                function next() {
+
+                 $("#translate-word").css({"border-color": "#d3d3d3"});
                  $("#translate-word").show();
                   $("#word-answer").text("");
                  $("#wrong-word").hide();
-                 if(i>=words_length){
-                   i=words_length-1;
-
-                   document.getElementById('word-span').innerHTML=words[i].polskie_tlum;
-                   document.getElementById('translate-word').value="";
-                 } else {
+                 $("#word").css({"margin-bottom": "0px"});
+                 $("#learned-paragraph").css({"margin-top": "50px"});
+                 $("#translate-word").val("");
                  i++;
+                 console.log(i);
+                 if(i>=words_length){
 
-                 document.getElementById('word-span').innerHTML=words[i].polskie_tlum;
-                 document.getElementById('translate-word').value="";
+                   i=words_length-1;
+                  // $("#word-span").hide();
+                   $("#word-span").text(words[i].polskie_tlum);
+                  // $("#word-span").fadeIn(1000);
+
+
+                 } else {
+                   //$("#word-span").hide();
+                   /*$("#word-span").css({
+                     'left': '300px', 'opacity': '0'
+                   });
+                   */
+                   $("#word-span").css({'left': '200px','opacity': '0'});
+                   $("#word-span").text(words[i].polskie_tlum);
+                   $("#word-span").animate({
+                     left: '0px',
+                     opacity: '1'
+                   }, 700);
                }
-               };
+        };
                function previous() {
+                 $("#translate-word").css({"border-color": "#d3d3d3"});
                  $("#translate-word").show();
                   $("#word-answer").text("");
                 $("#wrong-word").hide();
+                $("#word").css({"margin-bottom": "0px"});
+                $("#learned-paragraph").css({"margin-top": "50px"});
+                $("#translate-word").val("");
+                i--;
                  if(i<0){
                    i=0;
-
-                   document.getElementById('word-span').innerHTML=words[i].polskie_tlum;
-                   document.getElementById('translate-word').value="";
+                   //$("#word-span").hide();
+                   $("#word-span").text(words[i].polskie_tlum);
+                   //$("#word-span").fadeIn(1000);
                  } else {
-                 i--;
-
-                 document.getElementById('word-span').innerHTML=words[i].polskie_tlum;
-                 document.getElementById('translate-word').value="";
+                   $("#word-span").hide();
+                   $("#word-span").text(words[i].polskie_tlum);
+                   $("#word-span").fadeIn(1000);
                }
                };
                $("#next").click(function(){
@@ -156,34 +175,50 @@ while($row_words =  mysqli_fetch_assoc($result_words)){
                 var wordin = document.getElementById('translate-word').value;
                 wordin = wordin.trim();
                 if(wordin == words[i].angielskie_tlum){
+                  // CO SIE DZIEJE GDY DOBRZE
+                  $("#translate-word").css({"border-color": "green"});
+                  $("#word").css({"margin-bottom": "0px"});
+                  $("#learned-paragraph").css({"margin-top": "50px"});
                   good_words++;
+                  $("#word-span").animate({
+                    left: '-150px',
+                    opacity: '0'
+                  }, 700, function(){
+                    $("#word-span").css({'left': '200px','opacity': '0'});
+                  });
+                  setTimeout(next, 700);
                   if(good_words>=words_length){
                     good_words=words_length;
+
                   }
-                  document.getElementById('learned-paragraph').innerHTML="Nauczone słówka: "+good_words+"/"+words_length;
+                  //document.getElementById('learned-paragraph').innerHTML="Nauczone słówka: "+good_words+"/"+words_length;
                 } else {
                   // CO SIE DZIEJE JESLI ŹLE
                   $("#wrong-word").show();
-                  /*
-                  $("#translate-word").effect("shake",{
-                   direction: "left", times: 4, distance: 10},1000);
+                  $("#translate-word").css({"border-color": "red"});
+                  $("#word-span").effect("shake", {times: 2, distance: 10});
 
-*/
-                  
+
                   good_words--;
                   if(good_words<0){
                     good_words=0;
                   }
-                  document.getElementById('learned-paragraph').innerHTML="Nauczone słówka: "+good_words+"/"+words_length;
+                  //document.getElementById('learned-paragraph').innerHTML="Nauczone słówka: "+good_words+"/"+words_length;
                 }
                }
                $("#check").click(function(){
                  check_word();
+
                })
                ////////////////////////////////////////////////////
                function msg_word(){
-                 $("#translate-word").hide();
-                 $("#word-answer").text(words[i].angielskie_tlum);
+                 //$("#translate-word").hide();
+                 $("#word").css({"margin-bottom": "50px"});
+                 $("#learned-paragraph").css({"margin-top": "0px"});
+                 $("#word-span").hide();
+                 $("#word-span").text(words[i].angielskie_tlum);
+
+                 $("#word-span").fadeIn(1500);
                }
                $("#wrong-word").click(function(){
                  msg_word();
@@ -195,8 +230,7 @@ while($row_words =  mysqli_fetch_assoc($result_words)){
 
 
 
-             </div>
-           </div>
+
           </div>
 
       </div>
@@ -204,7 +238,7 @@ while($row_words =  mysqli_fetch_assoc($result_words)){
   </div>
   <div class="web_clear">
   </div>
-</div>
+
 <!-- TUTAJ ZACZYNA SIE STOPKA -->
 <?php
 include_once("footer_user.php"); //odwolanie do naglowka
