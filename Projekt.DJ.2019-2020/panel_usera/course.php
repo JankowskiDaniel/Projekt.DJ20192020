@@ -51,6 +51,9 @@ $course = $_GET['id'];
     <li class="nav-item">
       <a class="nav-link" href="course.php?id=3">Kwalifikacja E-14</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="course.php?id=4">Zwierzęta</a>
+    </li>
   </ul>
 </nav>
 </div>
@@ -64,6 +67,9 @@ $course = $_GET['id'];
   }
   if($course=='3'){
     $topic = 'e14';
+  }
+  if($course=='4'){
+    $topic = 'Zwierzęta';
   }
 
  ?>
@@ -85,6 +91,9 @@ $course = $_GET['id'];
             }
             if($topic=='e14'){
               echo ". Podczas kursu zapoznasz się z pojęciami dotyczącymi programowania aplikacji i stron internetowych.   Jeśli chcesz, <a href=\"app.php?id=3\" class=\"alert-link\">Rozpocznij kurs";
+            }
+            if($topic=='Zwierzęta'){
+              echo ". Podczas kursu poznasz nazwy różnych zwierząt w języku angielskim.  Jeśli chcesz, <a href=\"app.php?id=4\" class=\"alert-link\">Rozpocznij kurs";
             }
 
 

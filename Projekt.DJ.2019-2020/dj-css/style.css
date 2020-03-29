@@ -350,7 +350,7 @@ form > strong {
 #buttons-api {
   margin-top: 30px;
 }
-#next {
+#next{
   float: right;
 }
 #word-answer{
@@ -360,4 +360,18 @@ form > strong {
 }
 #word-span{
   position: relative;
+}
+#header-learned, #header-left{
+  margin-top: 20px;
+}
+#end-course{
+  margin-left: 10px;
+}
+#end-course:hover{
+  margin-left: 10px;
+  color: white;
+}
+.end-course-link:hover{
+  text-decoration: none;
+  color: white;
 }

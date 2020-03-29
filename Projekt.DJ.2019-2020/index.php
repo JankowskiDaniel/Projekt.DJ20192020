@@ -51,6 +51,7 @@ if(isset($_SESSION['iflogin']) && $_SESSION['iflogin']==true)
 <button type="button" class="btn btn-outline-info button-size"><a href="logowanie.php" id="logined">Zaloguj się</a></button>
 </div>
 <div class="lead pictures-describe">
+  <hr width="75%">
   <div class="row">
   <div class="col-md-4"><img src="./images/describe.png" alt="picture1" id="describe"></div>
   <div class="col-md-8">
@@ -73,6 +74,7 @@ if(isset($_SESSION['iflogin']) && $_SESSION['iflogin']==true)
 <p>Ucz się w dowolnym momencie z dowolnego miejsca na świecie! Wystarczy tylko dostęp do internetu!</p>
 
 </div>
+<hr width="75%">
 
 </div>
 

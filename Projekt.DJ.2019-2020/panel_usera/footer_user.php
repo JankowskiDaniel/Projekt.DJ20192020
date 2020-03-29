@@ -3,7 +3,7 @@
     <ul class="list-inline">
       <li class="list-inline-item"><a href="../logowanie.php" rel="nofollow">Logowanie</a></li>
       <li class="list-inline-item"><a href="../rejestracja.php" rel="nofollow">Rejestracja</a></li>
-      <li class="list-inline-item"><a href="#" rel="nofollow">Kontakt</a></li>
+      <li class="list-inline-item"><a href="../kontakt.php" rel="nofollow">Kontakt</a></li>
     <p class="text-center foot">Copyright &copy 2019-2020 by <strong>Daniel Jankowski.</strong> All Rights Reserved.</p>
   </div>
 </div>
