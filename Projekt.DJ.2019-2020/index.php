@@ -68,7 +68,7 @@ $("#but1").mouseover(function(){
 $("#but1").mouseout(function(){
   $("#logined").css({"color": "#4FA7FF"});
 });
-$("#but1r").click(function(e){
+/*$("#but1r").click(function(e){
   e.preventDefault();
   window.location = "rejestracja.php";
 });
@@ -80,6 +80,7 @@ $("#regege").click(function(e){
   e.preventDefault();
   window.location = "rejestracja.php";
 })
+*/
 </script>
 </div>
 <div class="lead pictures-describe">
