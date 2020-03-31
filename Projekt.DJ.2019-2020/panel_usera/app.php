@@ -236,7 +236,16 @@ while ($row_count = mysqli_fetch_assoc($count_learned)) {
                 var wordin = document.getElementById('translate-word').value;
                 wordin = wordin.trim();
                 wordin = wordin.toLowerCase();
-                if(wordin == words[i].angielskie_tlum){
+                console.log(words[i].angielskie_tlum);
+                if(wordin == words[i].angielskie_tlum.toLowerCase()){
+                  if(i==words_length-1){
+                    $("#translate-word").css({"border-color": "green"});
+                    $("#word").css({"margin-bottom": "0px"});
+                    $("#learned-paragraph").css({"margin-top": "50px"});
+                    $("#word-span").text(words[i].polskie_tlum);
+                    counting();
+                    //setTimeout(previous,700);
+                  } else {
                   // CO SIE DZIEJE GDY DOBRZE
                   $("#translate-word").css({"border-color": "green"});
                   $("#word").css({"margin-bottom": "0px"});
@@ -248,17 +257,11 @@ while ($row_count = mysqli_fetch_assoc($count_learned)) {
                     $("#word-span").css({'left': '300px','opacity': '0'});
                   });
                   counting();
-
-
-
-
-
-
-
-
-
                   setTimeout(next, 700);
                   setTimeout(abc, 700);
+                };
+                  //console.log(i);
+                  //console.log(words_length);
 
 
                 } else {
@@ -273,6 +276,7 @@ while ($row_count = mysqli_fetch_assoc($count_learned)) {
 
                })
                ////////////////////////////////////////////////////
+
                function msg_word(){
                  //$("#translate-word").hide();
                  $("#word").css({"margin-bottom": "50px"});

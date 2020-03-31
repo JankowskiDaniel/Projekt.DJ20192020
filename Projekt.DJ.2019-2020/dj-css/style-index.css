@@ -4,9 +4,10 @@ html, body, .container-fluid{
 .container-fluid{
   padding: 0;
   background-color: #eaedf1;
-  background-image: url("https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_960_720.jpg");
-
+  /*background-image: url("https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_960_720.jpg");
+*/
 }
+
 /* Set a background image by replacing the URL below */
 body {
   background: url('http://localhost/Projekt.DJ20192020/Projekt.DJ.2019-2020/images/background-image.jpg') no-repeat center center fixed;
@@ -207,11 +208,17 @@ body {
   border-bottom-right-radius: 10px;
   padding: 2%;
 }
+/*
 @media (max-width: 708px){
   .headcontent{
     height: 100px;
   }
+  .container{
+    margin: 0;
+    width: 100%;
+  }
 }
+*/
 .headmenu1{
   background-color: #4FA7FF;
   border-top-left-radius: 10px;
@@ -330,8 +337,8 @@ form > strong {
   height: 100px;
 }
 
-.container{
-  width: 50%;
+#container-index-main{
+  margin: 0 auto;
 
 }
 .index-main{
