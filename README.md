@@ -5,13 +5,11 @@ Project for 2019/2020.
 1. PROJECT:
   - Create a dynamic website for English learning.
   - Database project
-  <br>
- A) Front-end:
+1.1. Front-end:
   - Create a user-friendly website.
   - Responsive for all devices.
   - Dynamic flashcards for vocabulary learning in file ./panel_usera/app.php
-  <br>
-B) Back-end:
+1.2. Back-end:
   - Connection to database on server
   - User-friendly signup and login panel
   - Validate data entered by user in form
